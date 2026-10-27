@@ -87,7 +87,7 @@
           SS
         </div>
         <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-          <span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">Santiago Souza Nava</span>
+          <span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white whitespace-nowrap">Santiago Souza Nava</span>
           <span class="font-mono text-xs px-2 py-0.5 rounded-md bg-bioTeal-500/10 text-bioTeal-600 dark:text-bioTeal-400 border border-bioTeal-500/20 w-fit">
             .bio / .ml
           </span>
@@ -168,7 +168,7 @@
           </div>
 
           <!-- Headline -->
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 whitespace-nowrap">
             Santiago Souza Nava
           </h1>
 
@@ -214,11 +214,11 @@
             </a>
 
             <div class="flex items-center gap-2.5 pl-2 border-l border-slate-300 dark:border-slate-800">
-              <a href="https://github.com/santi-souza" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+              <a href="https://github.com/ssouzanava" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
                  class="p-3 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 dark:hover:text-bioTeal-400 hover:border-bioTeal-500/40 transition-all">
                 <i data-lucide="github" class="w-5 h-5"></i>
               </a>
-              <a href="https://www.linkedin.com/search/results/all/?keywords=Santiago%20Souza%20Nava" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+              <a href="https://www.linkedin.com/in/santiagosouza/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
                  class="p-3 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 hover:text-bioIndigo-500 dark:hover:text-bioIndigo-400 hover:border-bioIndigo-500/40 transition-all">
                 <i data-lucide="linkedin" class="w-5 h-5"></i>
               </a>
@@ -240,7 +240,7 @@
         <!-- Left Column: Narrative -->
         <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-bioTeal-600 dark:text-bioTeal-400">
-            <i data-lucide="Sparkles" class="w-4 h-4"></i>
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
             <span>The Hybrid Scientist Advantage</span>
           </div>
           
@@ -435,7 +435,7 @@
                   <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i>
                   <span>Live Shiny App</span>
                 </a>
-                <a href="https://github.com/santi-souza/stroke-eda-ml" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/ssouzanava/stroke-eda-ml" target="_blank" rel="noopener noreferrer"
                    class="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">
                   <i data-lucide="github" class="w-3.5 h-3.5"></i>
                   <span>GitHub Repo</span>
@@ -490,6 +490,88 @@
                  class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-bioTeal-500/10 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 transition-colors">
                 <span>Full Thesis - Spanish (PDF)</span>
                 <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4: WGS-GATK Variant Calling Pipeline -->
+          <article data-categories="bioinformatics" class="project-card group rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/60 dark:hover:border-bioIndigo-500/60 p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:shadow-bioIndigo-500/5 transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-medium bg-bioIndigo-500/10 text-bioIndigo-600 dark:text-bioIndigo-400 border border-bioIndigo-500/20">
+                  Genomics Pipeline • NGS
+                </span>
+                <i data-lucide="git-branch" class="w-5 h-5 text-bioIndigo-500"></i>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-bioIndigo-500 dark:group-hover:text-bioIndigo-400 transition-colors mb-3">
+                Whole Genome Sequencing (WGS) Variant Calling Pipeline
+              </h3>
+
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                End-to-end genomic variant discovery workflow following GATK Best Practices—covering raw read quality control, alignment, duplicate marking, base quality score recalibration (BQSR), and variant calling/filtering.
+              </p>
+
+              <!-- Tech Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">GATK</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">WGS / NGS</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Bash</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Variant Calling</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Bioinformatics</span>
+              </div>
+            </div>
+
+            <!-- Links Footer -->
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2.5 text-xs font-mono">
+              <a href="https://github.com/ssouzanava/WGS-GATK" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-bioIndigo-500/10 text-slate-700 dark:text-slate-300 hover:text-bioIndigo-400 transition-colors">
+                <span class="flex items-center gap-1.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Repository (WGS-GATK)</span>
+                </span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5: Machine Learning in Bioinformatics -->
+          <article data-categories="ai-ml bioinformatics" class="project-card group rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 hover:border-bioTeal-500/60 dark:hover:border-bioTeal-500/60 p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:shadow-bioTeal-500/5 transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-medium bg-bioTeal-500/10 text-bioTeal-600 dark:text-bioTeal-400 border border-bioTeal-500/20">
+                  Computational Biology • AI/ML
+                </span>
+                <i data-lucide="brain-circuit" class="w-5 h-5 text-bioTeal-500"></i>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-bioTeal-500 dark:group-hover:text-bioTeal-400 transition-colors mb-3">
+                Machine Learning for Biological Data Analysis
+              </h3>
+
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                Applied machine learning and statistical modeling pipeline for biological datasets—integrating preprocessing, feature selection, dimensionality reduction, and supervised classification.
+              </p>
+
+              <!-- Tech Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Scikit-learn</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Machine Learning</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Feature Selection</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Bioinformatics</span>
+              </div>
+            </div>
+
+            <!-- Links Footer -->
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2.5 text-xs font-mono">
+              <a href="https://github.com/ssouzanava/bioinfo-ML-project" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-bioTeal-500/10 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 transition-colors">
+                <span class="flex items-center gap-1.5">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Repository (bioinfo-ML-project)</span>
+                </span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>
               </a>
             </div>
           </article>
@@ -772,7 +854,7 @@
             <!-- Scientific Posters & Outputs Box -->
             <div class="p-7 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 shadow-sm">
               <div class="flex items-center gap-2.5 mb-5">
-                <i data-lucide="file-Spreadsheet" class="w-5 h-5 text-bioTeal-500"></i>
+                <i data-lucide="file-spreadsheet" class="w-5 h-5 text-bioTeal-500"></i>
                 <h3 class="text-xl font-bold text-slate-900 dark:text-white">Publications, Posters & Theses</h3>
               </div>
 
@@ -929,7 +1011,7 @@
         <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© <span id="year"></span> Santiago Souza Nava. Built with HTML5, Tailwind CSS & Vanilla JS.</p>
           <div class="flex items-center gap-5">
-            <a href="https://github.com/santi-souza" target="_blank" rel="noopener noreferrer" class="hover:text-bioTeal-400 transition-colors">GitHub</a>
+            <a href="https://github.com/ssouzanava" target="_blank" rel="noopener noreferrer" class="hover:text-bioTeal-400 transition-colors">GitHub</a>
             <a href="https://santisouza.shinyapps.io/DashboardTFM/" target="_blank" rel="noopener noreferrer" class="hover:text-bioTeal-400 transition-colors">Shiny Dashboard</a>
             <a href="https://www.ort.edu.uy/novedades/de-la-biotecnologia-al-analisis-de-datos" target="_blank" rel="noopener noreferrer" class="hover:text-bioTeal-400 transition-colors">ORT Feature</a>
           </div>
