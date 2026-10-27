@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santiago Souza Nava | Bioinformatics, Chemometrics & AI/ML Researcher</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="Personal portfolio of Santiago Souza Nava — PhD Candidate in Analytical Chemistry & Chemometrics, MSc in Bioinformatics & Biostatistics, and Biotechnology Engineer bridging wet-lab science and machine learning." />
+  <meta name="keywords" content="Santiago Souza Nava, Bioinformatics, Chemometrics, Machine Learning, LC-MS, Analytical Chemistry, Data Science, BOKU, FFoQSI, Biotech, Computational Biology" />
+  <meta name="author" content="Santiago Souza Nava" />
+  <meta property="og:title" content="Santiago Souza Nava | Computational Scientist & AI/ML Researcher" />
+  <meta property="og:description" content="From the lab to the algorithm: advancing food, biotech, and healthcare through data-driven analysis." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            slateDark: '#0B0F19',
+            cardDark: '#111827',
+            bioTeal: {
+              400: '#2DD4BF',
+              500: '#14B8A6',
+              600: '#0D9488',
+            },
+            bioIndigo: {
+              400: '#818CF8',
+              500: '#6366F1',
+              600: '#4F46E5',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar & Subtle Glows */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0B0F19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #14B8A6;
+    }
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(20, 184, 166, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slateDark dark:text-slate-100 font-sans antialiased selection:bg-bioTeal-500 selection:text-white transition-colors duration-300">
+
+  <!-- ==================== A. STICKY NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slateDark/85 border-b border-slate-200 dark:border-slate-800/80 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo / Brand -->
+      <a href="#" class="flex items-center gap-2.5 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-bioTeal-500 to-bioIndigo-500 flex items-center justify-center text-white font-mono font-bold text-lg shadow-lg shadow-bioTeal-500/20 group-hover:scale-105 transition-transform">
+          SS
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+          <span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">Santiago Souza Nava</span>
+          <span class="font-mono text-xs px-2 py-0.5 rounded-md bg-bioTeal-500/10 text-bioTeal-600 dark:text-bioTeal-400 border border-bioTeal-500/20 w-fit">
+            .bio / .ml
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="hover:text-bioTeal-500 dark:hover:text-bioTeal-400 transition-colors">About</a>
+        <a href="#projects" class="hover:text-bioTeal-500 dark:hover:text-bioTeal-400 transition-colors">Featured Projects</a>
+        <a href="#skills" class="hover:text-bioTeal-500 dark:hover:text-bioTeal-400 transition-colors">Tech Stack</a>
+        <a href="#timeline" class="hover:text-bioTeal-500 dark:hover:text-bioTeal-400 transition-colors">Experience & Timeline</a>
+        <a href="#publications" class="hover:text-bioTeal-500 dark:hover:text-bioTeal-400 transition-colors">Publications & Posters</a>
+        <a href="#contact" class="hover:text-bioTeal-500 dark:hover:text-bioTeal-400 transition-colors">Contact</a>
+      </nav>
+
+      <!-- Actions: Theme Toggle & CV Button -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
+        </button>
+
+        <a href="https://drive.google.com/file/d/12zjkvTQi1H_WKqjU7uO3Gab7MWNxTToj/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm bg-gradient-to-r from-bioTeal-500 to-bioIndigo-500 text-white shadow-md shadow-bioTeal-500/20 hover:opacity-95 hover:shadow-lg hover:shadow-bioTeal-500/30 transition-all">
+          <i data-lucide="file-down" class="w-4 h-4"></i>
+          <span>Download CV</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button id="theme-toggle-mobile" aria-label="Toggle Dark/Light Mode" class="sm:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+          <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-slate-700"></i>
+        </button>
+        <button id="mobile-menu-btn" aria-label="Open Menu" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slateDark px-4 pt-2 pb-6 space-y-3">
+      <a href="#about" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-bioTeal-500">About</a>
+      <a href="#projects" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-bioTeal-500">Featured Projects</a>
+      <a href="#skills" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-bioTeal-500">Tech Stack</a>
+      <a href="#timeline" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-bioTeal-500">Experience & Timeline</a>
+      <a href="#publications" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-bioTeal-500">Publications & Posters</a>
+      <a href="#contact" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-bioTeal-500">Contact</a>
+      <div class="pt-2">
+        <a href="https://drive.google.com/file/d/12zjkvTQi1H_WKqjU7uO3Gab7MWNxTToj/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+           class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm bg-gradient-to-r from-bioTeal-500 to-bioIndigo-500 text-white">
+          <i data-lucide="file-down" class="w-4 h-4"></i>
+          <span>Download CV</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== B. HERO SECTION ==================== -->
+    <section class="relative overflow-hidden py-20 md:py-28 lg:py-32 bg-grid-pattern border-b border-slate-200/70 dark:border-slate-800/80">
+      <!-- Interactive Molecular / Data Network Canvas -->
+      <canvas id="network-canvas" class="absolute inset-0 w-full h-full pointer-events-none opacity-40 dark:opacity-60"></canvas>
+      
+      <!-- Ambient Gradient Blobs -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-bioTeal-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/3 -right-24 w-96 h-96 bg-bioIndigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl">
+          
+          <!-- Location & Availability Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-200/70 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 text-xs font-mono text-slate-700 dark:text-slate-300 mb-6">
+            <span class="w-2 h-2 rounded-full bg-bioTeal-500 animate-pulse"></span>
+            <span>Vienna, Austria • Open to Post-PhD Industry Roles in Europe & Remote</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6">
+            Santiago Souza Nava
+          </h1>
+
+          <!-- Role Badges -->
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-8">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs sm:text-sm font-mono font-medium bg-bioTeal-500/10 text-bioTeal-600 dark:text-bioTeal-400 border border-bioTeal-500/30">
+              <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+              PhD Candidate in Analytical Chemistry & Chemometrics (BOKU & FFoQSI)
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs sm:text-sm font-mono font-medium bg-bioIndigo-500/10 text-bioIndigo-600 dark:text-bioIndigo-400 border border-bioIndigo-500/30">
+              <i data-lucide="dna" class="w-3.5 h-3.5"></i>
+              MSc in Bioinformatics & Biostatistics
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs sm:text-sm font-mono font-medium bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700">
+              <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+              Biotechnology Engineer
+            </span>
+          </div>
+
+          <!-- Tagline -->
+          <p class="text-xl sm:text-2xl lg:text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-bioTeal-600 to-bioIndigo-600 dark:from-white dark:via-bioTeal-400 dark:to-bioIndigo-400 mb-6 leading-snug">
+            "From the lab to the algorithm: advancing food, biotech, and healthcare through data-driven analysis."
+          </p>
+
+          <!-- Summary Pitch -->
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mb-10 leading-relaxed">
+            Developing machine-learning workflows, automated LC-MS pipelines, and predictive models that translate complex biological and chemical data into actionable insights.
+          </p>
+
+          <!-- Primary CTAs & Social Icons -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#projects"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-bioTeal-500 hover:bg-bioTeal-600 text-slate-950 shadow-lg shadow-bioTeal-500/25 transition-all transform hover:-translate-y-0.5">
+              <span>Explore Projects</span>
+              <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+            </a>
+
+            <a href="https://santisouza.shinyapps.io/DashboardTFM/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-white dark:bg-slate-800/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 shadow-sm transition-all transform hover:-translate-y-0.5">
+              <i data-lucide="activity" class="w-4 h-4 text-bioIndigo-500"></i>
+              <span>Interactive Shiny App</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-60"></i>
+            </a>
+
+            <div class="flex items-center gap-2.5 pl-2 border-l border-slate-300 dark:border-slate-800">
+              <a href="https://github.com/santi-souza" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                 class="p-3 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 dark:hover:text-bioTeal-400 hover:border-bioTeal-500/40 transition-all">
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </a>
+              <a href="https://www.linkedin.com/search/results/all/?keywords=Santiago%20Souza%20Nava" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                 class="p-3 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 hover:text-bioIndigo-500 dark:hover:text-bioIndigo-400 hover:border-bioIndigo-500/40 transition-all">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+              <a href="mailto:santiago.souza@boku.ac.at" aria-label="Email"
+                 class="p-3 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 dark:hover:text-bioTeal-400 hover:border-bioTeal-500/40 transition-all">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== C. ABOUT & WET-LAB TO DRY-LAB ADVANTAGE ==================== -->
+    <section id="about" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Narrative -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-bioTeal-600 dark:text-bioTeal-400">
+            <i data-lucide="Sparkles" class="w-4 h-4"></i>
+            <span>The Hybrid Scientist Advantage</span>
+          </div>
+          
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+            Bridging Wet-Lab Experimental Reality with Dry-Lab Computational Precision
+          </h2>
+          
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+            In computational life sciences, models are only as reliable as the experimental data that feeds them. My career began at the bench—designing <strong>molecular diagnostic workflows, PCR assays, and sequencing protocols</strong>—and evolved into high-resolution <strong>LC-QTOF-MS and Orbitrap mass spectrometry</strong>.
+          </p>
+          
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+            Today, as a PhD Researcher at <strong>BOKU University</strong> and <strong>FFoQSI</strong> in Vienna, I combine deep domain understanding of analytical noise, matrix effects, and biological variability with <strong>chemometrics, biostatistics, automated pipelines, and machine learning</strong>. Whether building predictive clinical classifiers or standardizing non-targeted metabolomics workflows, I engineer solutions that work in both code and reality.
+          </p>
+
+          <!-- Wet-Lab to Dry-Lab Bridge Pillars -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800">
+              <div class="w-9 h-9 rounded-lg bg-bioTeal-500/10 text-bioTeal-500 flex items-center justify-center mb-3">
+                <i data-lucide="microscope" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-1">Wet-Lab Roots</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">NGS, PCR, molecular diagnostics, and LC-QTOF-MS / Orbitrap instrumentation.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800">
+              <div class="w-9 h-9 rounded-lg bg-bioIndigo-500/10 text-bioIndigo-500 flex items-center justify-center mb-3">
+                <i data-lucide="workflow" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-1">Automated Pipelines</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Reproducible Nextflow (nf-core), R, and Python workflows for high-throughput data.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800">
+              <div class="w-9 h-9 rounded-lg bg-bioTeal-500/10 text-bioTeal-500 flex items-center justify-center mb-3">
+                <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+              </div>
+              <h3 class="font-semibold text-sm text-slate-900 dark:text-white mb-1">AI & Chemometrics</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Multivariate modeling, biomarker discovery, and interactive R Shiny deployments.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Featured Quote Card (Universidad ORT Uruguay Interview) -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl p-8 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 dark:from-cardDark dark:via-slate-900 dark:to-slate-950 text-white border border-slate-800 shadow-2xl overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-bioTeal-500/20 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="flex items-center justify-between mb-6">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-bioTeal-500/20 text-bioTeal-300 border border-bioTeal-500/30">
+                Featured Interview
+              </span>
+              <i data-lucide="quote" class="w-8 h-8 text-bioTeal-500/40"></i>
+            </div>
+
+            <blockquote class="text-lg sm:text-xl font-medium text-slate-100 leading-relaxed mb-6 italic">
+              "I've always liked computing and specializing in data analysis. Bioinformatics is a growing field, and I combine my wet-lab foundation with programming, biostatistics, and machine learning."
+            </blockquote>
+
+            <div class="border-t border-slate-800 pt-5 flex items-center justify-between">
+              <div>
+                <p class="font-semibold text-sm text-white">Santiago Souza Nava</p>
+                <p class="text-xs text-slate-400">Universidad ORT Uruguay Feature</p>
+              </div>
+              <a href="https://www.ort.edu.uy/novedades/de-la-biotecnologia-al-analisis-de-datos" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-bioTeal-400 hover:text-bioTeal-300 transition-colors">
+                <span>Read Article</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== D. FEATURED PROJECTS & RESEARCH ==================== -->
+    <section id="projects" class="py-20 lg:py-28 bg-slate-100/70 dark:bg-slate-900/40 border-y border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header & Filter Controls -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-bioTeal-600 dark:text-bioTeal-400 mb-2">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>Research & Engineering Portfolio</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
+              Featured Projects & Research
+            </h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap gap-2" id="project-filters" role="tablist" aria-label="Project category filters">
+            <button data-filter="all" class="filter-btn active px-4 py-2 rounded-lg text-xs font-mono font-medium bg-bioTeal-500 text-slate-950 shadow-sm transition-all">
+              All
+            </button>
+            <button data-filter="ai-ml" class="filter-btn px-4 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioTeal-500/50 transition-all">
+              AI & ML
+            </button>
+            <button data-filter="bioinformatics" class="filter-btn px-4 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioTeal-500/50 transition-all">
+              Bioinformatics
+            </button>
+            <button data-filter="lc-ms" class="filter-btn px-4 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioTeal-500/50 transition-all">
+              Analytical Chemistry / LC-MS
+            </button>
+          </div>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8" id="projects-grid">
+
+          <!-- Project 1: PhD Research -->
+          <article data-categories="ai-ml lc-ms" class="project-card group rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 hover:border-bioTeal-500/60 dark:hover:border-bioTeal-500/60 p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:shadow-bioTeal-500/5 transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-medium bg-bioTeal-500/10 text-bioTeal-600 dark:text-bioTeal-400 border border-bioTeal-500/20">
+                  PhD Research @ BOKU / FFoQSI
+                </span>
+                <i data-lucide="flask-round" class="w-5 h-5 text-bioTeal-500"></i>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-bioTeal-500 dark:group-hover:text-bioTeal-400 transition-colors mb-3">
+                Standardizing Non-Targeted LC-MS Workflows & Food Authenticity
+              </h3>
+
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                Developing and benchmarking automated data processing pipelines, chemometric strategies, and ML-driven workflows to identify robust authenticity biomarkers in complex food matrices (using wine as a model system).
+              </p>
+
+              <!-- Tech Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">R</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">LC-QTOF-MS</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Orbitrap</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Chemometrics</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Machine Learning</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Biomarker Discovery</span>
+              </div>
+            </div>
+
+            <!-- Links Footer -->
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2.5 text-xs font-mono">
+              <a href="https://drive.google.com/drive/folders/18V0J_Dk7rHZD-vlVXMou0024BjNf0qNA" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-bioTeal-500/10 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 transition-colors">
+                <span class="truncate pr-2">Poster 1 (05/2025): Authenticity Markers</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>
+              </a>
+              <a href="https://drive.google.com/file/d/1HeB5Kv5v1KMy8MHbiA68Sf7T40m_B6K_/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-bioTeal-500/10 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 transition-colors">
+                <span class="truncate pr-2">Poster 2 (10/2025): LC-MS Software Eval</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2: MSc Thesis -->
+          <article data-categories="ai-ml bioinformatics" class="project-card group rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/60 dark:hover:border-bioIndigo-500/60 p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:shadow-bioIndigo-500/5 transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-medium bg-bioIndigo-500/10 text-bioIndigo-600 dark:text-bioIndigo-400 border border-bioIndigo-500/20">
+                  MSc Thesis • Bioinformatics
+                </span>
+                <i data-lucide="heart-pulse" class="w-5 h-5 text-bioIndigo-500"></i>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-bioIndigo-500 dark:group-hover:text-bioIndigo-400 transition-colors mb-3">
+                Predictive Modeling of Stroke Risk
+              </h3>
+
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                End-to-end exploratory data analysis, statistical modeling, feature engineering, and machine learning classification to predict patient stroke risk, deployed with an interactive clinical dashboard.
+              </p>
+
+              <!-- Tech Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">R Shiny</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Scikit-learn</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Random Forest</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Gradient Boosting</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Biostatistics</span>
+              </div>
+            </div>
+
+            <!-- Links Footer -->
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2.5 text-xs font-mono">
+              <div class="grid grid-cols-2 gap-2">
+                <a href="https://santisouza.shinyapps.io/DashboardTFM/" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-bioIndigo-500/10 text-bioIndigo-600 dark:text-bioIndigo-400 hover:bg-bioIndigo-500/20 font-semibold transition-colors">
+                  <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i>
+                  <span>Live Shiny App</span>
+                </a>
+                <a href="https://github.com/santi-souza/stroke-eda-ml" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Repo</span>
+                </a>
+              </div>
+              <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300">
+                <span>Thesis PDF:</span>
+                <div class="flex items-center gap-3">
+                  <a href="https://drive.google.com/file/d/11nq4SIYuzS4ytwNeScnssrqZmAPamiOC/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-bioTeal-600 dark:text-bioTeal-400 hover:underline">English</a>
+                  <span>|</span>
+                  <a href="https://drive.google.com/file/d/1DUYoBAkzP0D2ik1bvq9DFK7wYqJK8EqU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-bioTeal-600 dark:text-bioTeal-400 hover:underline">Spanish</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: BSc Thesis -->
+          <article data-categories="bioinformatics" class="project-card group rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 hover:border-bioTeal-500/60 dark:hover:border-bioTeal-500/60 p-7 flex flex-col justify-between shadow-sm hover:shadow-xl hover:shadow-bioTeal-500/5 transition-all duration-300 transform hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                  BSc Thesis • Biotech Engineering
+                </span>
+                <i data-lucide="dna" class="w-5 h-5 text-bioTeal-500"></i>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-bioTeal-500 dark:group-hover:text-bioTeal-400 transition-colors mb-3">
+                Molecular Diagnostics of Hereditary Diseases
+              </h3>
+
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                Development and validation of molecular diagnostic workflows for hereditary conditions, establishing standardized wet-lab PCR and sequencing protocols for clinical reliability.
+              </p>
+
+              <!-- Tech Tags -->
+              <div class="flex flex-wrap gap-1.5 mb-6">
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Molecular Diagnostics</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">PCR</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Sequencing</span>
+                <span class="px-2.5 py-1 rounded text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Genetics</span>
+              </div>
+            </div>
+
+            <!-- Links Footer -->
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2.5 text-xs font-mono">
+              <a href="https://drive.google.com/file/d/1_a66jsdtFl78dLwtRQnWeE0Dp5GdsIaK/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-bioTeal-500/10 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 transition-colors">
+                <span>English Summary (PDF)</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+              <a href="https://drive.google.com/file/d/1dbiK7BGD3fVq10jwnxwcj6RvTi_Kkf7F/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+                 class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 hover:bg-bioTeal-500/10 text-slate-700 dark:text-slate-300 hover:text-bioTeal-500 transition-colors">
+                <span>Full Thesis - Spanish (PDF)</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== E. CATEGORIZED TECHNICAL SKILLS MATRIX ==================== -->
+    <section id="skills" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-bioTeal-600 dark:text-bioTeal-400 mb-2">
+          <i data-lucide="terminal" class="w-4 h-4"></i>
+          <span>Full-Stack Scientific Toolkit</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">
+          Categorized Technical Skills Matrix
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+          Click a domain below to highlight specific competencies across dry-lab computation, mass spectrometry, and wet-lab molecular biology.
+        </p>
+      </div>
+
+      <!-- Interactive Category Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12" id="skill-filters">
+        <button data-skill-target="all" class="skill-tab active px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-bioIndigo-500 text-white shadow-sm transition-all">
+          All Domains (7)
+        </button>
+        <button data-skill-target="prog" class="skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all">
+          Programming & Data Science
+        </button>
+        <button data-skill-target="ml" class="skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all">
+          Machine Learning & Stats
+        </button>
+        <button data-skill-target="bioinfo" class="skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all">
+          Bioinformatics & Pipelines
+        </button>
+        <button data-skill-target="chem" class="skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all">
+          Analytical Chem & Mass Spec
+        </button>
+        <button data-skill-target="viz" class="skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all">
+          Data Viz & Apps
+        </button>
+        <button data-skill-target="devops" class="skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all">
+          Cloud & DevOps
+        </button>
+        <button data-skill-target="wetlab" class="skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all">
+          Wet-Lab Foundation
+        </button>
+      </div>
+
+      <!-- Skills Matrix Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-grid">
+        
+        <!-- 1. Programming & Data Science -->
+        <div data-skill-group="prog" class="skill-card p-6 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-lg bg-bioTeal-500/10 text-bioTeal-500">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">Programming & Data Science</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Python (NumPy, Pandas, Scikit-learn)</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">R</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Bash</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">SQL (PostgreSQL)</span>
+          </div>
+        </div>
+
+        <!-- 2. Machine Learning & Statistics -->
+        <div data-skill-group="ml" class="skill-card p-6 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-lg bg-bioIndigo-500/10 text-bioIndigo-500">
+              <i data-lucide="brain" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">Machine Learning & Statistics</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Logistic Regression</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Random Forest</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Gradient Boosting</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Cross-Validation</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Model Evaluation</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Multivariate Chemometrics</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">EDA</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Imputation</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Feature Engineering</span>
+          </div>
+        </div>
+
+        <!-- 3. Bioinformatics & Pipelines -->
+        <div data-skill-group="bioinfo" class="skill-card p-6 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-lg bg-bioTeal-500/10 text-bioTeal-500">
+              <i data-lucide="git-branch" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">Bioinformatics & Pipelines</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Nextflow (nf-core)</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Bioconductor</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">GATK</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">DESeq2</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">STAR</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">HISAT2</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">IGV</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">GSEA</span>
+          </div>
+        </div>
+
+        <!-- 4. Analytical Chemistry & Mass Spec -->
+        <div data-skill-group="chem" class="skill-card p-6 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-lg bg-bioIndigo-500/10 text-bioIndigo-500">
+              <i data-lucide="atom" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">Analytical Chemistry & Mass Spec</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">LC-QTOF-MS</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Orbitrap</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Method Validation</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Non-Targeted Screening (NTS) Workflows</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Metabolomics</span>
+          </div>
+        </div>
+
+        <!-- 5. Data Visualization & Apps -->
+        <div data-skill-group="viz" class="skill-card p-6 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-lg bg-bioTeal-500/10 text-bioTeal-500">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">Data Visualization & Apps</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">R Shiny</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Flexdashboard</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">ggplot2</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Plotly</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Matplotlib</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Seaborn</span>
+          </div>
+        </div>
+
+        <!-- 6. Cloud & DevOps -->
+        <div data-skill-group="devops" class="skill-card p-6 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-lg bg-bioIndigo-500/10 text-bioIndigo-500">
+              <i data-lucide="cloud-cog" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">Cloud & DevOps</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Docker</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">AWS (EC2)</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Git / GitHub</span>
+          </div>
+        </div>
+
+        <!-- 7. Wet-Lab Foundation -->
+        <div data-skill-group="wetlab" class="skill-card md:col-span-2 lg:col-span-3 p-6 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 transition-all duration-300">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="p-2.5 rounded-lg bg-bioTeal-500/10 text-bioTeal-500">
+              <i data-lucide="test-tubes" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 dark:text-white">Wet-Lab Foundation</h3>
+          </div>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">NGS (Next-Generation Sequencing)</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Sanger Sequencing</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">DNA/RNA Extraction</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">PCR & qPCR</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">BSL-2 Laboratory Operations</span>
+            <span class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">LIMS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== F. CAREER, EDUCATION & CERTIFICATIONS TIMELINE ==================== -->
+    <section id="timeline" class="py-20 lg:py-28 bg-slate-100/70 dark:bg-slate-900/40 border-t border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Left 7 Columns: Experience & Academic Trajectory -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-bioTeal-600 dark:text-bioTeal-400 mb-2">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+              <span>Career & Academic Trajectory</span>
+            </div>
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-10">
+              Experience & Education
+            </h2>
+
+            <div class="relative border-l-2 border-bioTeal-500/40 ml-3 pl-8 space-y-10">
+              
+              <!-- Item 1: Current PhD -->
+              <div class="relative group">
+                <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-bioTeal-500 ring-4 ring-white dark:ring-slateDark"></span>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <span class="font-mono text-xs font-semibold uppercase px-2.5 py-0.5 rounded bg-bioTeal-500/10 text-bioTeal-600 dark:text-bioTeal-400">
+                    Current • Vienna, Austria
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  PhD Researcher in Analytical Chemistry & Research Associate
+                </h3>
+                <p class="text-sm font-medium text-bioIndigo-600 dark:text-bioIndigo-400 mb-2">
+                  BOKU University & FFoQSI (Austrian Competence Centre for Feed and Food Quality, Safety and Innovation)
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Leading research on standardized non-targeted LC-MS screening (LC-QTOF-MS, Orbitrap), chemometric modeling, and automated data pipelines for food authenticity and biomarker discovery.
+                </p>
+              </div>
+
+              <!-- Item 2: MSc -->
+              <div class="relative group">
+                <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-bioIndigo-500 ring-4 ring-white dark:ring-slateDark"></span>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <span class="font-mono text-xs font-semibold uppercase px-2.5 py-0.5 rounded bg-bioIndigo-500/10 text-bioIndigo-600 dark:text-bioIndigo-400">
+                    MSc • Europe
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  MSc in Bioinformatics and Biostatistics
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-1">
+                  Specialized in statistical inference, machine learning classification, multi-omics pipeline development, and clinical decision support tools (R Shiny).
+                </p>
+              </div>
+
+              <!-- Item 3: Industry Experience -->
+              <div class="relative group">
+                <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slateDark"></span>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <span class="font-mono text-xs font-semibold uppercase px-2.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                    3 Years Industry Experience • Uruguay
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  Molecular Diagnostics Specialist
+                </h3>
+                <p class="text-sm font-medium text-bioTeal-600 dark:text-bioTeal-400 mb-2">
+                  Genexa ADN Evolutivo
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Executed end-to-end clinical and molecular diagnostics workflows including DNA/RNA extraction, PCR, Sanger/NGS sequencing, quality control, and LIMS data management in BSL-2 environments.
+                </p>
+              </div>
+
+              <!-- Item 4: BSc -->
+              <div class="relative group">
+                <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-slate-400 dark:bg-slate-600 ring-4 ring-white dark:ring-slateDark"></span>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <span class="font-mono text-xs font-semibold uppercase px-2.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                    BSc • Uruguay
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+                  Biotechnology Engineering
+                </h3>
+                <p class="text-sm font-medium text-bioIndigo-600 dark:text-bioIndigo-400 mb-1">
+                  Universidad ORT Uruguay
+                </p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Strong foundation in molecular biology, bioprocess engineering, genetics, analytical instrumentation, and experimental design.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right 5 Columns: Certifications & Scientific Posters -->
+          <div class="lg:col-span-5 space-y-10" id="publications">
+            
+            <!-- Scientific Posters & Outputs Box -->
+            <div class="p-7 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-5">
+                <i data-lucide="file-Spreadsheet" class="w-5 h-5 text-bioTeal-500"></i>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Publications, Posters & Theses</h3>
+              </div>
+
+              <div class="space-y-4">
+                <a href="https://drive.google.com/file/d/1HeB5Kv5v1KMy8MHbiA68Sf7T40m_B6K_/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+                   class="block p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-bioTeal-500/10 border border-slate-200/70 dark:border-slate-700/70 transition-all">
+                  <span class="font-mono text-xs text-bioTeal-600 dark:text-bioTeal-400">Poster Presentation • 10/2025</span>
+                  <p class="font-semibold text-sm text-slate-900 dark:text-white mt-1">
+                    Comparative evaluation of LC-MS data processing software for Non-Targeted Screening of phenolic compounds in wine
+                  </p>
+                </a>
+
+                <a href="https://drive.google.com/drive/folders/18V0J_Dk7rHZD-vlVXMou0024BjNf0qNA" target="_blank" rel="noopener noreferrer"
+                   class="block p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-bioTeal-500/10 border border-slate-200/70 dark:border-slate-700/70 transition-all">
+                  <span class="font-mono text-xs text-bioTeal-600 dark:text-bioTeal-400">Poster Presentation • 05/2025</span>
+                  <p class="font-semibold text-sm text-slate-900 dark:text-white mt-1">
+                    From Data to Authenticity Markers: Standardizing Non-Targeted Analysis Workflows for Reliable Food Authentication
+                  </p>
+                </a>
+
+                <a href="https://drive.google.com/file/d/11nq4SIYuzS4ytwNeScnssrqZmAPamiOC/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+                   class="block p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-bioIndigo-500/10 border border-slate-200/70 dark:border-slate-700/70 transition-all">
+                  <span class="font-mono text-xs text-bioIndigo-600 dark:text-bioIndigo-400">MSc Thesis • Bioinformatics & Biostatistics</span>
+                  <p class="font-semibold text-sm text-slate-900 dark:text-white mt-1">
+                    Predictive Modeling of Stroke Risk & Interactive Clinical Dashboard
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <!-- Certifications Box -->
+            <div class="p-7 rounded-2xl bg-white dark:bg-cardDark border border-slate-200 dark:border-slate-800 shadow-sm">
+              <div class="flex items-center gap-2.5 mb-5">
+                <i data-lucide="award" class="w-5 h-5 text-bioIndigo-500"></i>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Specialized Certifications (2022–2024)</h3>
+              </div>
+
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                  <span class="font-medium text-slate-800 dark:text-slate-200">Computational Drug Discovery</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded bg-bioTeal-500/10 text-bioTeal-500">2024</span>
+                </li>
+                <li class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                  <span class="font-medium text-slate-800 dark:text-slate-200">Selecting Tools for Genetic Variants</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded bg-bioTeal-500/10 text-bioTeal-500">2024</span>
+                </li>
+                <li class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                  <span class="font-medium text-slate-800 dark:text-slate-200">Python for Data Science & ML Bootcamp</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded bg-bioTeal-500/10 text-bioTeal-500">2024</span>
+                </li>
+                <li class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                  <span class="font-medium text-slate-800 dark:text-slate-200">SQL Bootcamp</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded bg-bioTeal-500/10 text-bioTeal-500">2024</span>
+                </li>
+                <li class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                  <span class="font-medium text-slate-800 dark:text-slate-200">Git & GitHub Version Control</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded bg-bioIndigo-500/10 text-bioIndigo-400">2023</span>
+                </li>
+                <li class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800">
+                  <span class="font-medium text-slate-800 dark:text-slate-200">Bioinformatics for Biologists</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded bg-bioIndigo-500/10 text-bioIndigo-400">2023</span>
+                </li>
+                <li class="flex items-center justify-between pt-2">
+                  <span class="font-medium text-slate-800 dark:text-slate-200">AI in Bioinformatics</span>
+                  <span class="font-mono text-xs px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-500">2022</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== G. LANGUAGES & CONTACT FOOTER ==================== -->
+    <footer id="contact" class="bg-slate-900 dark:bg-slate-950 text-slate-200 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b border-slate-800">
+          
+          <!-- Contact & Emails -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-bioTeal-400">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Get in Touch</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white">
+              Let's Collaborate on Data-Driven Life Sciences
+            </h2>
+            <p class="text-slate-400 max-w-2xl text-sm sm:text-base leading-relaxed">
+              Available for industry positions, research collaborations, and consulting in AI/ML for Life Sciences, Bioinformatics, Computational Chemistry, and Chemometrics across Europe and remote.
+            </p>
+
+            <!-- Email Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <a href="mailto:santiago.souza@boku.ac.at" class="p-3.5 rounded-xl bg-slate-800/70 hover:bg-slate-800 border border-slate-700/80 hover:border-bioTeal-500/50 transition-all group">
+                <span class="text-xs font-mono text-bioTeal-400 block mb-1">Academic (BOKU)</span>
+                <span class="text-xs font-medium text-white break-all group-hover:underline">santiago.souza@boku.ac.at</span>
+              </a>
+              <a href="mailto:santiago.souza@ffoqsi.at" class="p-3.5 rounded-xl bg-slate-800/70 hover:bg-slate-800 border border-slate-700/80 hover:border-bioTeal-500/50 transition-all group">
+                <span class="text-xs font-mono text-bioIndigo-400 block mb-1">Research (FFoQSI)</span>
+                <span class="text-xs font-medium text-white break-all group-hover:underline">santiago.souza@ffoqsi.at</span>
+              </a>
+              <a href="mailto:santisouza97@gmail.com" class="p-3.5 rounded-xl bg-slate-800/70 hover:bg-slate-800 border border-slate-700/80 hover:border-bioTeal-500/50 transition-all group">
+                <span class="text-xs font-mono text-slate-400 block mb-1">Direct / Personal</span>
+                <span class="text-xs font-medium text-white break-all group-hover:underline">santisouza97@gmail.com</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Spoken Languages & Location -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <div class="p-6 rounded-2xl bg-slate-800/40 border border-slate-800">
+              <h3 class="text-sm font-mono uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
+                <i data-lucide="globe-2" class="w-4 h-4 text-bioTeal-400"></i>
+                <span>Languages</span>
+              </h3>
+              <div class="grid grid-cols-2 gap-3 text-sm">
+                <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                  <p class="font-semibold text-white">Spanish</p>
+                  <p class="text-xs font-mono text-bioTeal-400">Native</p>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                  <p class="font-semibold text-white">English</p>
+                  <p class="text-xs font-mono text-bioTeal-400">Advanced</p>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                  <p class="font-semibold text-white">Portuguese</p>
+                  <p class="text-xs font-mono text-bioIndigo-400">Advanced</p>
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                  <p class="font-semibold text-white">Italian</p>
+                  <p class="text-xs font-mono text-slate-400">Intermediate</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between px-2 text-xs text-slate-400 font-mono">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="map-pin" class="w-4 h-4 text-bioTeal-400"></i>
+                Vienna, Austria
+              </span>
+              <a href="https://drive.google.com/file/d/12zjkvTQi1H_WKqjU7uO3Gab7MWNxTToj/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="text-bioTeal-400 hover:underline flex items-center gap-1">
+                <span>Download Full CV (PDF)</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>© <span id="year"></span> Santiago Souza Nava. Built with HTML5, Tailwind CSS & Vanilla JS.</p>
+          <div class="flex items-center gap-5">
+            <a href="https://github.com/santi-souza" target="_blank" rel="noopener noreferrer" class="hover:text-bioTeal-400 transition-colors">GitHub</a>
+            <a href="https://santisouza.shinyapps.io/DashboardTFM/" target="_blank" rel="noopener noreferrer" class="hover:text-bioTeal-400 transition-colors">Shiny Dashboard</a>
+            <a href="https://www.ort.edu.uy/novedades/de-la-biotecnologia-al-analisis-de-datos" target="_blank" rel="noopener noreferrer" class="hover:text-bioTeal-400 transition-colors">ORT Feature</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <!-- ==================== VANILLA JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // 1. Initialize Lucide Icons & Dynamic Year
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // 2. Dark / Light Theme Toggle (Defaults to Dark Mode #0B0F19)
+    const htmlEl = document.documentElement;
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeBtnMobile = document.getElementById('theme-toggle-mobile');
+
+    if (localStorage.getItem('theme') === 'light') {
+      htmlEl.classList.remove('dark');
+    }
+
+    function toggleTheme() {
+      htmlEl.classList.toggle('dark');
+      localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+    }
+
+    themeBtn.addEventListener('click', toggleTheme);
+    themeBtnMobile.addEventListener('click', toggleTheme);
+
+    // 3. Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // 4. Interactive Project Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        // Update active button styles
+        filterBtns.forEach(b => {
+          b.className = 'filter-btn px-4 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioTeal-500/50 transition-all';
+        });
+        btn.className = 'filter-btn active px-4 py-2 rounded-lg text-xs font-mono font-medium bg-bioTeal-500 text-slate-950 shadow-sm transition-all';
+
+        // Filter project cards
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-categories');
+          if (filter === 'all' || categories.includes(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 5. Interactive Skills Matrix Filtering
+    const skillTabs = document.querySelectorAll('.skill-tab');
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    skillTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-skill-target');
+
+        skillTabs.forEach(t => {
+          t.className = 'skill-tab px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-white dark:bg-cardDark text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-bioIndigo-500/50 transition-all';
+        });
+        tab.className = 'skill-tab active px-3.5 py-2 rounded-lg text-xs font-mono font-medium bg-bioIndigo-500 text-white shadow-sm transition-all';
+
+        skillCards.forEach(card => {
+          const group = card.getAttribute('data-skill-group');
+          if (target === 'all' || group === target) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // 6. Subtle Molecular / Data Network Background Canvas
+    const canvas = document.getElementById('network-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
+        this.radius = Math.random() * 2 + 1;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = '#14B8A6';
+        ctx.fill();
+      }
+    }
+
+    const particleCount = Math.min(45, Math.floor((canvas.width * canvas.height) / 22000));
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateNetwork() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 140) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(99, 102, 241, ${0.22 * (1 - dist / 140)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateNetwork);
+    }
+    animateNetwork();
+  </script>
+</body>
+</html>
