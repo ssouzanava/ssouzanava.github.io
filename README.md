@@ -35,6 +35,17 @@ My research focuses on LC-MS-based metabolomics, non-targeted analysis, food aut
 - 💼 [LinkedIn](https://www.linkedin.com/in/santiagosouza/)
 - 🐙 [GitHub](https://github.com/ssouzanava)
 
+## Website Development
+
+The website's Tailwind CSS is compiled ahead of time rather than loaded from the Tailwind CDN. The color theme follows the visitor's system preference until they choose a theme with the toggle; that choice is saved in their browser.
+
+```bash
+npm ci
+npm run build
+```
+
+Commit the generated `assets/css/styles.css` along with any website style changes so GitHub Pages serves the production stylesheet.
+
 ## Education
 
 **PhD in Analytical Chemistry**  

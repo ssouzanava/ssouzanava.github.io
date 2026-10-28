@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,61 +20,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            slateDark: '#0B0F19',
-            cardDark: '#111827',
-            bioTeal: {
-              400: '#2DD4BF',
-              500: '#14B8A6',
-              600: '#0D9488',
-            },
-            bioIndigo: {
-              400: '#818CF8',
-              500: '#6366F1',
-              600: '#4F46E5',
-            }
-          }
-        }
-      }
-    }
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    document.documentElement.classList.toggle(
+      'dark',
+      savedTheme === 'dark' || (savedTheme !== 'light' && prefersDark.matches)
+    );
   </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <style>
-    /* Custom Scrollbar & Subtle Glows */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0B0F19;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1E293B;
-      border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #14B8A6;
-    }
-    .bg-grid-pattern {
-      background-size: 32px 32px;
-      background-image: 
-        linear-gradient(to right, rgba(20, 184, 166, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
-    }
-  </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 dark:bg-slateDark dark:text-slate-100 font-sans antialiased selection:bg-bioTeal-500 selection:text-white transition-colors duration-300">
@@ -1146,19 +1104,22 @@
       });
     });
 
-    // 2. Dark / Light Theme Toggle (Defaults to Dark Mode #0B0F19)
+    // 2. Dark / Light Theme Toggle (Follows the system until manually changed)
     const htmlEl = document.documentElement;
     const themeBtn = document.getElementById('theme-toggle');
     const themeBtnMobile = document.getElementById('theme-toggle-mobile');
-
-    if (localStorage.getItem('theme') === 'light') {
-      htmlEl.classList.remove('dark');
-    }
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     function toggleTheme() {
       htmlEl.classList.toggle('dark');
       localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
     }
+
+    systemTheme.addEventListener('change', event => {
+      if (localStorage.getItem('theme') === null) {
+        htmlEl.classList.toggle('dark', event.matches);
+      }
+    });
 
     themeBtn.addEventListener('click', toggleTheme);
     themeBtnMobile.addEventListener('click', toggleTheme);
