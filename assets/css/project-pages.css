@@ -151,6 +151,36 @@
   filter: brightness(0.92);
 }
 
+.project-card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card-title-link:focus-visible,
+.project-case-study-link:focus-visible {
+  outline: 2px solid #14b8a6;
+  outline-offset: 3px;
+}
+
+.project-card-title-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.project-card-title-link--indigo:focus-visible {
+  outline-color: #818cf8;
+}
+
+.project-case-study-link {
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.project-case-study-link--indigo:focus-visible {
+  outline-color: #818cf8;
+}
+
 html.dark .project-site-body {
   background: #0b0f19;
   color: #f1f5f9;
