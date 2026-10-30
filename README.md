@@ -46,6 +46,8 @@ npm run build
 
 Commit the generated `assets/css/styles.css` along with any website style changes so GitHub Pages serves the production stylesheet.
 
+The project case-study pages use `assets/css/project-pages.css`. Keep `sitemap.xml` updated when adding or removing public pages; `robots.txt` points crawlers to that sitemap.
+
 ## Education
 
 **PhD in Analytical Chemistry**  
